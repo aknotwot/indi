@@ -349,3 +349,11 @@ SET(dragonlight_SRC
 add_executable(indi_dragon_light ${dragonlight_SRC})
 target_link_libraries(indi_dragon_light indidriver ${HTTPLIB_LIBRARY})
 install(TARGETS indi_dragon_light RUNTIME DESTINATION bin)
+
+# ########## IPX800v4 ###############
+SET(ipx800v4_SRC
+    ipx800v4.cpp)
+
+add_executable(indi_ipx800v4 ${ipx800v4_SRC})
+target_link_libraries(indi_ipx800v4 indidriver ${HTTPLIB_LIBRARY})
+install(TARGETS indi_ipx800v4 RUNTIME DESTINATION bin)
