@@ -83,16 +83,15 @@ bool IPX800::updateProperties()
     INDI::DefaultDevice::updateProperties();
     InputInterface::updateProperties();
     OutputInterface::updateProperties();
-
+    defineProperty(APIKeyTP);
+    
     if (isConnected())
-    {
-        defineProperty(APIKeyTP);
+    {      
         defineProperty(ModelVersionTP);
         SetTimer(getCurrentPollingPeriod());
     }
     else
     {
-        deleteProperty(APIKeyTP);
         deleteProperty(ModelVersionTP);
     }
 
